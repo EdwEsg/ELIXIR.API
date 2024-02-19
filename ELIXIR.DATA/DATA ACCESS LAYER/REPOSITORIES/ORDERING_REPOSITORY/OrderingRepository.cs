@@ -1374,6 +1374,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 BatchNo = x.BatchNo,
                 OrderRemarks = x.OrderRemarks,
                 Remarks = x.Remarks
+                //ss
                 
 
             });
