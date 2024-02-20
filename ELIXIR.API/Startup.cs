@@ -59,7 +59,7 @@ namespace ELIXIR.API
             services.AddTransient(typeof(IUserService), typeof(UserService));
       
             services.AddDbContext<StoreContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("LiveConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
             services.Configure<ApiBehaviorOptions>(options =>
             {

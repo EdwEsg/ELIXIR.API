@@ -1401,7 +1401,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 x.IsPrint,
                 x.IsTransact,
                 x.BatchNo,
-                x.OrderRemarks
+ 
                 
 
             }).Where(x => x.Key.IsApprove == true)
@@ -1424,7 +1424,6 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                  IsPrint = x.Key.IsPrint != null,
                  IsTransact = x.Key.IsTransact,
                  BatchNo = x.Key.BatchNo,
-                 OrderRemarks = x.Key.OrderRemarks
 
              });
 
@@ -1448,7 +1447,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 x.IsPrint,
                 x.IsTransact,
                 x.BatchNo,
-               x.OrderRemarks
+
 
             })
               .Where(x => x.Key.IsApprove == true)
@@ -1470,7 +1469,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                  IsPrint = x.Key.IsPrint != null,
                  IsTransact = x.Key.IsTransact,
                  BatchNo = x.Key.BatchNo,
-                OrderRemarks = x.Key.OrderRemarks
+
 
              }).Where(x => Convert.ToString(x.OrderNo).ToLower()
                .Contains(search.Trim().ToLower()));
@@ -1495,7 +1494,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 x.RejectedDateTempo,
                 x.Remarks,
                 x.BatchNo,
-                x.OrderRemarks
+
 
             })
               .Where(x => x.Key.DeliveryStatus != null)
@@ -1514,7 +1513,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
             RejectedDate = x.Key.RejectedDateTempo.ToString(),
             Remarks = x.Key.Remarks,
             BatchNo = x.Key.BatchNo,
-            OrderRemarks = x.Key.OrderRemarks
+
 
         });
 
@@ -1538,7 +1537,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 x.RejectedDateTempo,
                 x.Remarks,
                 x.BatchNo,
-               x.OrderRemarks
+             
 
             })
               .Where(x => x.Key.DeliveryStatus != null)
@@ -1557,7 +1556,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
            RejectedDate = x.Key.RejectedDateTempo.Value.ToString("MM/dd/yyyy"),
            Remarks = x.Key.Remarks,
            BatchNo = x.Key.BatchNo,
-           OrderRemarks = x.Key.OrderRemarks
+          
            
 
        }).Where(x => Convert.ToString(x.OrderNo).ToLower()
