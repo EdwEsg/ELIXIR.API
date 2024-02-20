@@ -1283,13 +1283,14 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 x.FarmName,
                 x.FarmCode,
                 x.FarmType,
-                x.OrderDate,
+                //x.OrderDate,
                 x.PreparedDate,
                 x.IsApprove,
                 x.DeliveryStatus,
                 x.IsPrepared,
                 x.BatchNo,
-                x.OrderRemarks
+                
+                
 
             }).Where(x => x.Key.IsApprove != true)
               .Where(x => x.Key.DeliveryStatus != null)
@@ -1303,11 +1304,11 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                FarmCode = x.Key.FarmCode,
                Category = x.Key.FarmType,
                Quantity = x.Sum(x => x.QuantityOrdered),
-               OrderDate = x.Key.OrderDate.ToString(),
+               //OrderDate = x.Key.OrderDate.ToString(),
                PreparedDate = x.Key.PreparedDate.ToString(),
                DeliveryStatus = x.Key.DeliveryStatus,
                BatchNo = x.Key.BatchNo,
-               OrderRemarks = x.Key.OrderRemarks    
+               
 
            });
 
@@ -1321,18 +1322,17 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
             {
 
                 x.OrderNo,
-                x.FarmName,
-                x.FarmCode,
-                x.FarmType,
-                x.OrderDate,
-                x.PreparedDate,
-                x.IsApprove,
-                x.DeliveryStatus,
-                x.IsPrepared,
-                x.BatchNo,
-                x.OrderRemarks
+                    x.FarmName,
+                    x.FarmCode,
+                    x.FarmType,
+                    //x.OrderDate,
+                    x.PreparedDate,
+                    x.IsApprove,
+                    x.DeliveryStatus,
+                    x.IsPrepared,
+                    x.BatchNo,
 
-            }).Where(x => x.Key.IsApprove != true)
+                }).Where(x => x.Key.IsApprove != true)
               .Where(x => x.Key.DeliveryStatus != null)
               .Where(x => x.Key.IsPrepared == true)
 
@@ -1343,11 +1343,10 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
               FarmCode = x.Key.FarmCode,
               Category = x.Key.FarmType,
               Quantity = x.Sum(x => x.QuantityOrdered),
-              OrderDate = x.Key.OrderDate.ToString(),
+              //OrderDate = x.Key.OrderDate.ToString(),
               PreparedDate = x.Key.PreparedDate.ToString(),
               DeliveryStatus = x.Key.DeliveryStatus,
               BatchNo = x.Key.BatchNo,
-              OrderRemarks = x.Key.OrderRemarks
 
           }).Where(x => Convert.ToString(x.OrderNo).ToLower()
             .Contains(search.Trim().ToLower()));
@@ -1373,7 +1372,8 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 DeliveryStatus = x.DeliveryStatus,
                 BatchNo = x.BatchNo,
                 OrderRemarks = x.OrderRemarks,
-                Remarks = x.Remarks
+                Remarks = x.Remarks,
+                OrderDate = x.OrderDate.ToString()
                 //ss
                 
 
@@ -1402,6 +1402,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 x.IsTransact,
                 x.BatchNo,
                 x.OrderRemarks
+                
 
             }).Where(x => x.Key.IsApprove == true)
               .Where(x => x.Key.DeliveryStatus != null)
@@ -1447,7 +1448,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 x.IsPrint,
                 x.IsTransact,
                 x.BatchNo,
-                x.OrderRemarks
+               x.OrderRemarks
 
             })
               .Where(x => x.Key.IsApprove == true)
@@ -1469,7 +1470,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                  IsPrint = x.Key.IsPrint != null,
                  IsTransact = x.Key.IsTransact,
                  BatchNo = x.Key.BatchNo,
-                 OrderRemarks = x.Key.OrderRemarks
+                OrderRemarks = x.Key.OrderRemarks
 
              }).Where(x => Convert.ToString(x.OrderNo).ToLower()
                .Contains(search.Trim().ToLower()));
@@ -1486,7 +1487,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 x.FarmName,
                 x.FarmCode,
                 x.FarmType,
-                x.OrderDate,
+                //x.OrderDate,
                 x.PreparedDate,
                 x.IsApprove,
                 x.DeliveryStatus,
@@ -1506,7 +1507,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
             FarmCode = x.Key.FarmCode,
             Category = x.Key.FarmType,
             Quantity = x.Sum(x => x.QuantityOrdered),
-            OrderDate = x.Key.OrderDate.ToString(),
+            //OrderDate = x.Key.OrderDate.ToString(),
             PreparedDate = x.Key.PreparedDate.ToString(),
             DeliveryStatus = x.Key.DeliveryStatus,
             IsReject = x.Key.IsReject != null,
@@ -1529,7 +1530,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 x.FarmName,
                 x.FarmCode,
                 x.FarmType,
-                x.OrderDate,
+                //x.OrderDate,
                 x.PreparedDate,
                 x.IsApprove,
                 x.DeliveryStatus,
@@ -1537,7 +1538,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
                 x.RejectedDateTempo,
                 x.Remarks,
                 x.BatchNo,
-                x.OrderRemarks
+               x.OrderRemarks
 
             })
               .Where(x => x.Key.DeliveryStatus != null)
@@ -1549,7 +1550,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
            FarmCode = x.Key.FarmCode,
            Category = x.Key.FarmType,
            Quantity = x.Sum(x => x.QuantityOrdered),
-           OrderDate = x.Key.OrderDate.ToString(),
+           //OrderDate = x.Key.OrderDate.ToString(),
            PreparedDate = x.Key.PreparedDate.ToString(),
            DeliveryStatus = x.Key.DeliveryStatus,
            IsReject = x.Key.IsReject != null,
@@ -1557,6 +1558,7 @@ namespace ELIXIR.DATA.DATA_ACCESS_LAYER.REPOSITORIES.ORDERING_REPOSITORY
            Remarks = x.Key.Remarks,
            BatchNo = x.Key.BatchNo,
            OrderRemarks = x.Key.OrderRemarks
+           
 
        }).Where(x => Convert.ToString(x.OrderNo).ToLower()
          .Contains(search.Trim().ToLower()));
